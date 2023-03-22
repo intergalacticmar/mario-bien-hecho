@@ -10,6 +10,7 @@ public class GroundSensor : MonoBehaviour
 
     SFXManager sfxManager;
     SoundManager soundManager;
+    GameManager gameManager;
 
     void Awake()
     {
@@ -17,6 +18,7 @@ public class GroundSensor : MonoBehaviour
         
         sfxManager = GameObject.Find("SFXManager").GetComponent<SFXManager>();
         soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -53,6 +55,7 @@ public class GroundSensor : MonoBehaviour
             soundManager.StopBGM();
             sfxManager.MarioDeath();
             SceneManager.LoadScene(2);
+            gameManager.GameOver();
         }  
     }
 

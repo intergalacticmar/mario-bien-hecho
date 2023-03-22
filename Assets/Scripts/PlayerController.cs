@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     float horizontal;
 
+    GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class PlayerController : MonoBehaviour
         sensor = GameObject.Find("GroundSensor").GetComponent<GroundSensor>();
         anim = GetComponent<Animator>();
 
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         playerHealth = 10;
         Debug.Log(texto);
     }
@@ -32,6 +36,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gameManager.isGameOver == false)
+        {
         horizontal = Input.GetAxis("Horizontal");
 
         //transform.position += new Vector3(horizontal, 0, 0) * playerSpeed * Time.deltaTime; 
@@ -55,6 +61,7 @@ public class PlayerController : MonoBehaviour
         {
             rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             anim.SetBool("IsJumpinng", true);
+        }
         }
     }
 

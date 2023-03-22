@@ -14,16 +14,19 @@ public class Camara : MonoBehaviour
 
     public float interpolationRatio;
 
+    GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.Find("Mario").GetComponent<Transform>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        if(target != null)
+        if(target != null && gameManager.isGameOver == false)
         {
             //posicion deseada de la camara
             Vector3 desiredPosition = target.position + offset;
