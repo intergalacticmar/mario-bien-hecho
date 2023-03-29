@@ -6,6 +6,9 @@ TagManager:
   tags:
   - DeadZone
   - ColisionGoomba
+  - Coin
+  - Bullet
+  - PowerUp
   layers:
   - Default
   - TransparentFX

@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
 
     GameManager gameManager;
 
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,12 +47,14 @@ public class PlayerController : MonoBehaviour
 
         if(horizontal < 0)
         {
-            spriteRenderer.flipX = true;
+            //spriteRenderer.flipX = true;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             anim.SetBool("IsRunning", true);
         }
         else if(horizontal > 0)
         {
-            spriteRenderer.flipX = false;
+            //spriteRenderer.flipX = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             anim.SetBool("IsRunning", true);
         }
         else
@@ -62,11 +67,25 @@ public class PlayerController : MonoBehaviour
             rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             anim.SetBool("IsJumpinng", true);
         }
+
+        if(Input.GetKeyDown(KeyCode.F) && gameManager.canShoot)
+        {
+            Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        }
         }
     }
 
     void FixedUpdate()
     {
         rBody.velocity = new Vector2(horizontal * playerSpeed, rBody.velocity.y);
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "PowerUp")
+        {
+            gameManager.canShoot = true;
+            Destroy(collider.gameObject);
+        }
     }
 }
