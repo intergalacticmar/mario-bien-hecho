@@ -23891,6 +23891,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1230743437905814374, guid: 5001fa4c2f6306548b0efed31c1b4c9e, type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230743437905814374, guid: 5001fa4c2f6306548b0efed31c1b4c9e, type: 3}
       propertyPath: bulletSpawn
       value: 
       objectReference: {fileID: 1078715766}
@@ -23902,6 +23906,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 7364732887016241226, guid: 0e00b69328eabcf488c47e3a14e24637, type: 3}
+    - target: {fileID: 1230743437905814374, guid: 5001fa4c2f6306548b0efed31c1b4c9e, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 1230743437905814375, guid: 5001fa4c2f6306548b0efed31c1b4c9e, type: 3}
       propertyPath: m_Name
       value: Mario

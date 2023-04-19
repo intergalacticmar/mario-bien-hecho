@@ -106,4 +106,9 @@ public class PlayerController : MonoBehaviour
             Destroy(collider.gameObject);
         }
     }
+
+    void OnDrawGizmos() 
+    {
+        Gizmos.DrawWireSphere(attackHitBox.position, attackRange);
+    }
 }
