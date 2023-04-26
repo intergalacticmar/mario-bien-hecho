@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     SoundManager soundManager;
     GameManager gameManager;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,5 +79,15 @@ public class Enemy : MonoBehaviour
                 horizontal = 1;
             }
         }
+    }
+
+    void OnBecameVisible() 
+    {
+        gameManager.enemiesInScreen.Add(this.gameObject);
+    }
+
+    void OnBecameInvisible() 
+    {
+        gameManager.enemiesInScreen.Remove(this.gameObject);
     }
 }
