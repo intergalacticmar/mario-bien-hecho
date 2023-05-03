@@ -10390,6 +10390,7 @@ MonoBehaviour:
   isGameOver: 0
   canShoot: 0
   powerUpDuration: 5
+  enemiesInScreen: []
 --- !u!4 &821088736
 Transform:
   m_ObjectHideFlags: 0
@@ -19131,7 +19132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693197379}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.04, y: -8, z: 0}
+  m_LocalPosition: {x: -63.4, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
